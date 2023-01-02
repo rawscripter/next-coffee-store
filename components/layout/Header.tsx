@@ -2,10 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 export default function Header() {
     const navigation = [
-        { name: 'Product', href: '#' },
-        { name: 'Features', href: '#' },
-        { name: 'Marketplace', href: '#' },
-        { name: 'Company', href: '#' },
+        // { name: 'Shop', href: '/shop' },
     ]
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
@@ -45,7 +42,6 @@ export default function Header() {
                                 <span className="sr-only">CoffeeHub</span>
                                 {/* CoffeeHub text logo */}
                                 <h1 className="text-2xl font-bold text-gray-900">CoffeeHub</h1>
-
                             </Link>
                         </div>
                         <div className="flex lg:hidden">
@@ -59,9 +55,9 @@ export default function Header() {
                         </div>
                         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
                             {navigation.map((item) => (
-                                <a key={item.name} href={item.href} className="font-semibold text-gray-900 hover:text-gray-900">
+                                <Link key={item.name} href={item.href} className="font-semibold text-gray-900 hover:text-gray-900">
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">

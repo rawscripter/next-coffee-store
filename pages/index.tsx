@@ -1,24 +1,43 @@
 /* This example requires Tailwind CSS v3.0+ */
 import Link from 'next/link';
+import SingleShop from '../components/shops/SingleShop'
+const popularCoffeeShops = [
+    {
+        id: 1,
+        name: 'Basic Tee',
+        href: '#',
+        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+        imageAlt: "Front of men's Basic Tee in black.",
+        price: '$35',
+        color: 'Black',
+    },
+    {
+        id: 2,
+        name: 'Basic Tee',
+        href: '#',
+        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+        imageAlt: "Front of men's Basic Tee in black.",
+        price: '$35',
+        color: 'Black',
+    },
+    {
+        id: 3,
+        name: 'Basic Tee',
+        href: '#',
+        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+        imageAlt: "Front of men's Basic Tee in black.",
+        price: '$35',
+        color: 'Black',
+    },
 
+]
 
 export default function Home() {
 
     return (
         <div className="relative px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
+            <div className="mx-auto max-w-5xl pt-20 pb-32 sm:pt-48 sm:pb-20">
                 <div>
-                    <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                        {/* <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                  <span className="text-gray-600">
-                    Announcing our next round of funding.{' '}
-                    <a href="#" className="font-semibold text-indigo-600">
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      Read more <span aria-hidden="true">&rarr;</span>
-                    </a>
-                  </span>
-                </div> */}
-                    </div>
                     <div>
                         <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
                             Explore Coffee <span className="text-indigo-600">with us</span>
@@ -66,6 +85,16 @@ export default function Home() {
                             </defs>
                         </svg>
                     </div>
+                </div>
+            </div>
+            {/* Popular coffee shops section */}
+            <div className="mx-auto max-w-5xl pb-12 sm:pb-16">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900">Popular Coffee Shops</h2>
+                <p className="mt-2 text-sm text-gray-600">Explore the most popular coffee shops in your area.</p>
+                <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                    {popularCoffeeShops.map((product) => (
+                        <SingleShop key={product.id} product={product} />
+                    ))}
                 </div>
             </div>
         </div>
